@@ -13,30 +13,30 @@ function getConfiguration(config) {
 
 function getEndpoints(deviceAddress, endpoints) {
     
-    var t = endpoints.addEndpoint("1", "1 - Temperature sensor", endpointType.temperatureSensor);
+    var t = endpoints.addEndpoint("T00001", "Temperature A", endpointType.temperatureSensor);
         alert = t.addAlert();
         alert.variableTypeId = variableType.temperature;
         alert.conditionType = conditionType.greaterOrEqual;
-        alert.threshold = 28;
+        alert.threshold = 50;
         alert.normalConditionType = conditionType.lower;
-        alert.normalThreshold = 28;
+        alert.normalThreshold = 25;
         alert.severity = alarmSeverity.high ;
         alert.notificationEmails = ['valeria.marjovsky@cloud.studio'];
-    var e = endpoints.addEndpoint("2", "2 - Flujo", endpointType.genericSensor);
-    e.variableTypeId = 1224;
-    endpoints.addEndpoint("2a", "2a - Flujo", endpointType.flowSensor);
-    endpoints.addEndpoint("3", "3 - Lectura", endpointType.volumeSensor);
-    endpoints.addEndpoint("4", "4 - Flujo reverso acumulado", endpointType.volumeSensor);
-    endpoints.addEndpoint("5", "5 - Flujo diario acumulado", endpointType.volumeSensor);
-    endpoints.addEndpoint("6", "6 - Apertura", endpointType.closureController);
-    endpoints.addEndpoint("7", "7a - Alarma Batería baja", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("8", "7b - Alarma Problema de batería", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("9", "7c - Alarma Tubo vacío", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("10", "7d - Alarma Flujo reverso", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("11", "7e - Alarma Fuera de rango", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("12", "7f - Alarma Problema de temperatura", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("13", "7g - Alarma de EE", endpointType.iasSensor, iasEndpointSubType.alarmInput);
-    endpoints.addEndpoint("14", "8 - No Serie", endpointType.textContainer);
+    var e = endpoints.addEndpoint("F0001", "Flujo Gen", endpointType.genericSensor);
+    e.variableTypeId = 1242;
+    endpoints.addEndpoint("F00002", "Flujo Principal", endpointType.flowSensor);
+    endpoints.addEndpoint("V00001", "Lectura Vol", endpointType.volumeSensor);
+    endpoints.addEndpoint("V00003", "Flujo reverso Vol acumulado", endpointType.volumeSensor);
+    endpoints.addEndpoint("V00004", "Flujo diario Vol acumulado", endpointType.volumeSensor);
+    endpoints.addEndpoint("CC0001", "Controlador de Apertura", endpointType.closureController);
+    endpoints.addEndpoint("A00001", "Alarma Batería baja", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00002", "Alarma Problema de batería", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00003", "Alarma Tubo vacío", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00004", "Alarma Flujo reverso", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00005", "Alarma Fuera de rango", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00006", "Alarma Problema de temperatura", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00007", "Alarma de EE", endpointType.iasSensor, iasEndpointSubType.alarmInput);
+    endpoints.addEndpoint("A00008", "Serie", endpointType.textContainer);
 }
 
 function validateDeviceAddress(address, result) {
